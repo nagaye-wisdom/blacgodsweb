@@ -127,5 +127,5 @@ MEDIA_URL = '/media/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
-# django_heroku.settings()
+django_heroku.settings(locals())
 
