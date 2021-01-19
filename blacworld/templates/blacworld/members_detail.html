@@ -1,0 +1,24 @@
+{% extends "blacworld/members.html" %}
+
+{% block content %}
+
+
+<div class="content-section" style="margin-left:200px; margin-right:200px; background-color:  rgba(0, 0, 0, 0.2); border-radius: 15px 100px; ">
+    <br>
+    <div class="media">
+        <img class="rounded border account-img mr-4" style="margin-left:200px; margin-right:500px; " src="{{ object.member.image.url }}"><img class="rounded account-img mr-4"  width="40" height="40"src="{{ object.member.country.url }}">
+
+      </div>
+    <br>
+      <div style="margin-left:200px; margin-right:500px; ">
+          <p><div>{{ object.member.bio }}</div></p>
+
+      </div>
+
+    <br>
+</div>
+
+
+
+{% endblock content %}
+

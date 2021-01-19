@@ -1,0 +1,39 @@
+{% extends "blacworld/members.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+     <div style="text-align:center;">
+         {% if submit_button == 'Search' and request.GET.q != '' %}
+            {% if results %}
+                <br>
+                {% for result in results %}
+
+                       <div class="column" style="margin-left:50px; margin-right:50px; display: inline-block; ">
+                           <a href="{% url 'blacworld:member' result.id %}"><img class="rounded border account-img mr-4" src="{{ result.member.image.url }}"></a>
+                           <div style="margin-left:50px; margin-right:10px; text-align:center;">
+                            {{ result.member.name }}
+                           </div>
+                       </div>
+
+                {% endfor %}
+            {% else %}
+            <div style="margin-left:10px;">
+                No search results for this search
+            </div>
+            {% endif %}
+        {% endif %}
+
+     </div>
+
+{% endblock content %}
+<br>
+
+
+
+
+
+
+
+

@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<body style="body margin-left:20px; margin-right:20px; background-image: url('/media/images/jj-ying-7JX0-bfiuxQ-unsplash.jpg');">
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blacgods</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+
+
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background:black;">
+        <div class="container">
+            <div style="margin-right: 80px;" class="navbar-brand"><a href="{% url 'blacworld:home' %}"><img src="/media/images/IMG_0702.JPG" width="100" height="100" /></a></div>
+
+            <button class="navbar-toggler" type="button" style="background:grey" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div style="text-align:center; background-color:black;">
+                <form action="{% url 'gallery:video_search' %}" method="GET" value="{{request.GET.q}}">
+                     <input type="text" name="q" size="50" value="{{request.GET.q}}" placeholder="search video"/>
+                     <input type="submit" name="submit" value="Search"/>
+                </form>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="{% url 'blacworld:home' %}" style="background:grey; color:black;  ">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'blacworld:members' %}" style="background:white; color:black">Members</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'blacworld:about' %}" style="background:white; color:black">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'gallery:videos' %}" style="background:white; color:black; ">Gallery</a>
+                        </li>
+                    </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+<br><br><br><br><br><br><br>
+
+<div style="text-align: center;">
+    <a href="{% url 'gallery:pictures' %}" style="text-align: center;"> <button class="btn btn-outline-dark">VIEW PICTURES</button></a>
+</div>
+
+{% for video in videos %}
+       <div class="column" style="margin-left: 50px; margin-right: 50px; display: inline;">
+            <a href="{% url 'gallery:video' video.id  %}">
+                <video width="240" height="240" controls autoplay muted="muted">
+                    <source src="{{video.video.url}}" type="video/mp4">
+                </video>
+            </a>
+       </div>
+{% endfor %}
+
+
+
+<br><br>
+
+<!--footer starts from here-->
+<footer class="footer">
+<div class="container bottom_border">
+<div class="row">
+<div class=" col-sm-4 col-md col-sm-4  col-12 col">
+<h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+<!--headin5_amrc-->
+
+<p><i class="fa fa-location-arrow"></i> Upper West Region/Wa/Kaleo/KA-KA 203 </p>
+<p><i class="fa fa-phone"></i>  +233-0545079851 / 0507560647  </p>
+<p><i class="fa fa fa-envelope"></i> blaćgods@gmail.com  </p>
+
+
+</div>
+
+
+<div class=" col-sm-4 col-md  col-6 col">
+<h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+<!--headin5_amrc-->
+<ul class="footer_ul_amrc">
+<li><a href="http://webenlance.com">Blaćgods on youtube</a></li>
+<li><a href="http://webenlance.com">Blaćgods on IG</a></li>
+<li><a href="http://webenlance.com">Blaćgods on facebook</a></li>
+<li><a href="http://webenlance.com">Blaćgods on whatsApp</a></li>
+<li><a href="http://webenlance.com">wizzles Group of companies</a></li>
+<li><a href="http://webenlance.com">wizzles collection</a></li>
+</ul>
+<!--footer_ul_amrc ends here-->
+</div>
+
+
+<div class=" col-sm-4 col-md  col-6 col">
+<h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+<!--headin5_amrc-->
+<ul class="footer_ul_amrc">
+<li><a href="http://webenlance.com">Blaćgods on youtube</a></li>
+<li><a href="http://webenlance.com">Blaćgods on IG</a></li>
+<li><a href="http://webenlance.com">Blaćgods on facebook</a></li>
+<li><a href="http://webenlance.com">Blaćgods on whatsApp</a></li>
+<li><a href="http://webenlance.com">wizzles Group of companies</a></li>
+<li><a href="http://webenlance.com">wizzles collection</a></li>
+</ul>
+<!--footer_ul_amrc ends here-->
+</div>
+
+
+<div class=" col-sm-4 col-md  col-12 col">
+<h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+<!--headin5_amrc ends here-->
+
+<ul class="footer_ul2_amrc">
+<li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Instagram...<a href="#">@blaćgods</a></p></li>
+<li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>facebook...<a href="#">Blaćgods Empire</a></p></li>
+<li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Youtube...<a href="#">The Power Family</a></p></li>
+</ul>
+<!--footer_ul2_amrc ends here-->
+</div>
+</div>
+</div>
+
+
+<div class="container">
+<ul class="foote_bottom_ul_amrc">
+<li><a href="http://webenlance.com">Home</a></li>
+<li><a href="http://webenlance.com">About</a></li>
+<li><a href="http://webenlance.com">Blog</a></li>
+<li><a href="http://webenlance.com">Contact</a></li>
+</ul>
+<!--foote_bottom_ul_amrc ends here-->
+<p class="text-center">Copyright @2020 | Designed With by <a href="#">Wizzles</a></p>
+
+<ul class="social_footer_ul">
+<li><a href="http://webenlance.com"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="http://webenlance.com"><i class="fab fa-twitter"></i></a></li>
+<li><a href="http://webenlance.com"><i class="fab fa-linkedin"></i></a></li>
+<li><a href="http://webenlance.com"><i class="fab fa-instagram"></i></a></li>
+</ul>
+<!--social_footer_ul ends here-->
+</div>
+
+</footer>
+
+
+</body>
+</body>
+</html>
+
+
