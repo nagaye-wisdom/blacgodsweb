@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'member',
     'gallery',
     'whitenoise',
-    'gunicorn'
 
 ]
 
@@ -63,7 +62,7 @@ ROOT_URLCONF = 'blacgods.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
